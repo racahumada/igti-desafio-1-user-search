@@ -66,7 +66,8 @@ function eventControl() {
   function captureSearch(event) {
     let valueInput = inputSearch.value;
     console.log(event);
-    if (valueInput !== '' && (event.key === 'Enter' || event.type == 'click')) {
+    if (valueInput !== '' || event.type == 'click') {
+      //if (valueInput !== '' && (event.key === 'Enter' || event.type == 'click')) {
       resultSearch = allUsers.filter((user) => {
         return user.name.toLowerCase().indexOf(valueInput.toLowerCase()) > -1;
       });
